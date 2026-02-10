@@ -16,9 +16,15 @@ function onActionClick(clickedAction) {
 }
 function onCountClick() {
   let splitted = input.value.split(` `);
-  firstNumber = parseInt(splitted[0]);
+  firstNumber = Number(splitted[0]);
   action = splitted[1];
-  secondNumber = parseInt(splitted[2]);
+  secondNumber = Number(splitted[2]);
+
+  // patikriname ar įvesti skaičiai teisingi
+  if (!Number.isFinite(firstNumber) || !Number.isFinite(secondNumber)) {
+    calculationSpan.innerText = "Įveskite teisingus skaičius";
+    return;
+  }
 
   calculateAnswer();
   input.value = answer;
@@ -41,6 +47,9 @@ function calculateAnswer() {
     case `/`:
       answer = firstNumber / secondNumber;
       break;
+    default:
+      console.log(`Nežinomas veiksmas:  ${action}`);
+      answer = NaN;
   }
 }
 function onCleanClick() {
@@ -66,6 +75,6 @@ document.getElementById(`show-history`).onclick = function () {
     (x) =>
       `<p>${x.firstNumber} ${x.action} ${x.secondNumber} = ${x.answer} </p>`
   );
-  let historyBlock = document.querySelector(`.calculator . history-items`);
+  let historyBlock = document.querySelector(`.calculator .history-items`);
   historyBlock.innerHTML = formatted.join(``);
 };
