@@ -1,0 +1,131 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #356b8f;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 420px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.calculator .input-row {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.calculator .input-row span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 1em;
+  font-size: 0.9rem;
+  color: #2b2b2b;
+  opacity: 0.8;
+}
+
+.calculator .input-row input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 2rem;
+  text-align: right;
+  padding: 1em;
+  background-color: #eeeeee;
+  border: 1px solid #b1b1b1;
+  border-radius: 6px;
+}
+
+.calculator .buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calculator .buttons button {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 18px;
+  font-size: 2em;
+  border: none;
+  background-color: #9dd8ff;
+  border: 1px solid #b1b1b1;
+  cursor: pointer;
+  user-select: none;
+}
+
+.calculator .buttons button:hover {
+  background-color: #3876a0;
+  color: white;
+}
+
+.calculator .buttons button.op {
+  background-color: #7bc4ff;
+  font-weight: bold;
+}
+
+.calculator .buttons button.equals {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+.calculator .buttons button.equals:hover {
+  opacity: 0.9;
+}
+
+.calculator .buttons button.danger {
+  background-color: #ff6b6b;
+  color: white;
+  font-weight: bold;
+}
+
+.calculator .buttons button.backspace {
+  width: 50%;
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.history {
+  margin-top: 12px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.history-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.history-controls button {
+  padding: 10px 12px;
+  cursor: pointer;
+  border: 1px solid #b1b1b1;
+  background: #f2f2f2;
+  border-radius: 6px;
+}
+
+.history-controls button:hover {
+  background: #e6e6e6;
+}
+
+.history-items p {
+  margin: 6px 0;
+  padding: 6px 8px;
+  background: #f7f7f7;
+  border-radius: 6px;
+  font-family: monospace;
+}
